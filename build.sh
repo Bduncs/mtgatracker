@@ -5,7 +5,7 @@ start_raw=$(date)
 
 if (( "$#" != 1 ))
 then
-    appveyor_version=$(echo $APPVEYOR_REPO_BRANCH | cut -f1 -d "/")
+    appveyor_version=$(echo $APPVEYOR_REPO_BRANCH | cut -f2 -d "/")
     if [[ "$appveyor_version" =~ "[0-9]\.[0-9]\.[0-9]" ]]; then
         echo "valid version / branch: $appveyor_version"
     else

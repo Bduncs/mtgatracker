@@ -6,6 +6,10 @@ cache:
   - '%APPDATA%\npm-cache'
   - '%USERPROFILE%\.electron'
 
+# thank you! https://github.com/chef-cookbooks/powershell/pull/113/files
+init:
+  - git config --global core.autocrlf true
+
 install:
   - ps: Install-Product node 8 x64
   - virtualenv venv -p C:\Python36\Python.exe
